@@ -9,14 +9,17 @@ import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
+import javax.persistence.Transient;
 
 @Entity
 @DiscriminatorValue("stagiaire")
 public class Praticien extends Compte {
 	@Column(name="Lieu")
 	private String lieu;
+	@Transient
 	@OneToMany(mappedBy = "Praticien")
 	private List<PraticienSpecialite> spe = new ArrayList<PraticienSpecialite>();
+	@Transient
 	@OneToMany(mappedBy = "Praticien")
 	private List<Crenaux> crenaux = new ArrayList<Crenaux>();
 	
@@ -34,6 +37,14 @@ public class Praticien extends Compte {
 		this.lieu = lieu;
 		this.spe = spe;
 		this.crenaux = crenaux;
+	}
+	
+	
+
+
+	public Praticien(String nom, String prenom, String email, String mdp,String lieu) {
+		super(nom, prenom, email, mdp);
+		this.lieu = lieu;
 	}
 
 	public String getLieu() {
@@ -62,8 +73,13 @@ public class Praticien extends Compte {
 
 	@Override
 	public String toString() {
-		return "Praticien [lieu=" + lieu + "]";
+		return "Praticien [lieu=" + lieu + ", spe=" + spe + ", crenaux=" + crenaux + ", getId()=" + getId()
+				+ ", getVersion()=" + getVersion() + ", getNom()=" + getNom() + ", getPrenom()=" + getPrenom()
+				+ ", getEmail()=" + getEmail() + ", getMdp()=" + getMdp() + ", toString()=" + super.toString()
+				+ ", getClass()=" + getClass() + ", hashCode()=" + hashCode() + "]";
 	}
+
+
 
 	
 }
