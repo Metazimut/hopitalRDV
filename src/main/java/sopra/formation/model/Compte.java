@@ -46,6 +46,15 @@ public abstract class Compte {
 		this.email = email;
 		this.mdp = mdp;
 	}
+	
+	
+	public Compte(String nom, String prenom, String email, String mdp) {
+		super();
+		this.nom = nom;
+		this.prenom = prenom;
+		this.email = email;
+		this.mdp = mdp;
+	}
 
 	public Long getId() {
 		return id;
