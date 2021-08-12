@@ -79,7 +79,7 @@ public class PraticienSpecialite {
 
 	@Override
 	public String toString() {
-		return "PraticienSpecialite [id=" + id + ", version=" + version + ", specialite=" + specialite + "]";
+		return "PraticienSpecialite [id=" + id + ", version=" + version +"]";
 	}
 	
 	

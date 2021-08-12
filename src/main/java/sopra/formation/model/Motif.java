@@ -130,7 +130,7 @@ public class Motif {
 
 	@Override
 	public String toString() {
-		return "Motif [id=" + id + ", version=" + version + ", libelle=" + libelle + ", duree=" + duree + ", rdv=" + rdv
+		return "Motif [id=" + id + ", version=" + version + ", libelle=" + libelle
 				+ "]";
 	}
 
