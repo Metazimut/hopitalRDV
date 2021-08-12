@@ -15,7 +15,7 @@ import javax.persistence.Table;
 import javax.persistence.Version;
 
 @Entity
-@Table(name = "motif")
+@Table(name = "rdv")
 public class Rdv {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

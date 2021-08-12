@@ -57,6 +57,24 @@ public class Motif {
 	}
 
 
+	public Motif(Long id, int version, String libelle, double duree) {
+		super();
+		this.id = id;
+		this.version = version;
+		this.libelle = libelle;
+		this.duree = duree;
+	}
+	
+	
+
+
+	public Motif(String libelle, double duree) {
+		super();
+		this.libelle = libelle;
+		this.duree = duree;
+	}
+
+
 	public Long getId() {
 		return id;
 	}

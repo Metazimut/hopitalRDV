@@ -12,6 +12,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 import javax.persistence.Version;
 
 @Entity
@@ -25,6 +26,7 @@ public class Creneaux {
 	private int version;
 	@Column(name="date")
 	private Date creneauxDispo;
+	@Transient
 	@OneToMany(mappedBy = "motif_id")
 	private List<Motif> motif = new ArrayList<Motif>();
 	
