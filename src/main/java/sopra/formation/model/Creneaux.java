@@ -13,7 +13,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.persistence.Transient;
 import javax.persistence.Version;
 
 @Entity
@@ -27,7 +26,7 @@ public class Creneaux {
 	private int version;
 	@Column(name="date")
 	private Date creneauxDispo;
-	@OneToMany(mappedBy = "creneaux_id")
+	@OneToMany(mappedBy = "creneaux")
 	private List<Rdv> rdv = new ArrayList<Rdv>();
 	@ManyToOne
 	@JoinColumn(name="Praticien")
@@ -45,6 +44,11 @@ public class Creneaux {
 		this.creneauxDispo = creneauxDispo;
 		this.rdv = rdv;
 		this.praticien = praticien;
+	}
+	
+	public Creneaux(Date creneauxDispo) {
+		super();
+		this.creneauxDispo = creneauxDispo;
 	}
 
 	public Long getId() {
@@ -85,6 +89,11 @@ public class Creneaux {
 
 	public void setPraticien(Praticien praticien) {
 		this.praticien = praticien;
+	}
+
+	@Override
+	public String toString() {
+		return "Creneaux [id=" + id + ", version=" + version + ", creneauxDispo=" + creneauxDispo + "]";
 	}
 
 	
