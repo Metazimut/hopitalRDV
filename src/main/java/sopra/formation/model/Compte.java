@@ -44,6 +44,15 @@ public abstract class Compte {
 		this.mdp = mdp;
 	}
 	
+	public Compte(Long id, String nom, String prenom, String email, String mdp) {
+		super();
+		this.id = id;
+		this.nom = nom;
+		this.prenom = prenom;
+		this.email = email;
+		this.mdp = mdp;
+	}
+	
 	
 	public Compte(String nom, String prenom, String email, String mdp) {
 		super();
