@@ -36,7 +36,9 @@ public interface ICompteRepository extends JpaRepository<Compte, Long> {
 	
 	Praticien findPraticienByNom(@Param("Nom") String nom); // NamedQuery
 	
-	Praticien findPraticienById(@Param("Id") String id); // NamedQuery
+	Praticien findPraticienById(@Param("Id") Long idPraticien); // NamedQuery
 
-
+	Patient findPatientById(@Param("Id") Long idPatient); // NamedQuery
+	
+	Admin findAdminById(@Param("Id") Long idAdmin); // NamedQuery
 }
