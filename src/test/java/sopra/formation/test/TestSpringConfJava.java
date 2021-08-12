@@ -84,9 +84,9 @@ public class TestSpringConfJava {
 		
 		
 
-		System.out.println("must find xav by email "+CompteRepo.findAdminByEmail("d.xav@gmail.com"));
-		System.out.println("must find mat by nom "+CompteRepo.findPatientByNom("W"));
-		System.out.println("must find stan by specialite "+CompteRepo.findPraticienBySpe(spe1));
+		System.out.println("must find stan by lieu "+CompteRepo.findAllPraticienByLieu("paris"));
+		System.out.println("must find mat by nom "+CompteRepo.findAllPatientByNom("W"));
+		System.out.println("must find stan by specialite "+CompteRepo.findAllPraticienBySpe(spe1));
 		context.close();
 		
 	}
