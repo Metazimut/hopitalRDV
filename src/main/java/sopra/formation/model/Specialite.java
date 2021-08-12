@@ -4,15 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Column;
-import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Lob;
-import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
 import javax.persistence.Version;
 
 public class Specialite {
@@ -69,12 +64,21 @@ public class Specialite {
 		this.libelle = libelle;
 	}
 
-	public PraticienSpecialite getPraticienSpecialite() {
-		return praticienSpecialite;
+
+	public List<PraticienSpecialite> getPraticienSpecialites() {
+		return praticienSpecialites;
 	}
 
-	public void setPraticienSpecialite(PraticienSpecialite praticienSpecialite) {
-		this.praticienSpecialite = praticienSpecialite;
+	public void setPraticienSpecialites(List<PraticienSpecialite> praticienSpecialites) {
+		this.praticienSpecialites = praticienSpecialites;
+	}
+
+	public List<Motif> getMotifs() {
+		return motifs;
+	}
+
+	public void setMotifs(List<Motif> motifs) {
+		this.motifs = motifs;
 	}
 
 	@Override
@@ -82,13 +86,7 @@ public class Specialite {
 		return "Specialite [id=" + id + ", version=" + version + ", libelle=" + libelle + "]";
 	}
 
-	public Motif getMotif() {
-		return motif;
-	}
-
-	public void setMotif(Motif motif) {
-		this.motif = motif;
-	}
+	
 	
 	
 	
