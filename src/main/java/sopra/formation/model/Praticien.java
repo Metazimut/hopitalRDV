@@ -21,7 +21,7 @@ public class Praticien extends Compte {
 	private List<PraticienSpecialite> spe = new ArrayList<PraticienSpecialite>();
 	@Transient
 	@OneToMany(mappedBy = "Praticien")
-	private List<Crenaux> crenaux = new ArrayList<Crenaux>();
+	private List<Creneaux> creneaux = new ArrayList<Creneaux>();
 	
 	public Praticien() {
 		super();
@@ -32,11 +32,11 @@ public class Praticien extends Compte {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Praticien(Long id, int version, String nom, String prenom, String email, String mdp, String lieu, List<PraticienSpecialite> spe, List<Crenaux> crenaux) {
+	public Praticien(Long id, int version, String nom, String prenom, String email, String mdp, String lieu, List<PraticienSpecialite> spe, List<Creneaux> creneaux) {
 		super(id, version, nom, prenom, email, mdp);
 		this.lieu = lieu;
 		this.spe = spe;
-		this.crenaux = crenaux;
+		this.creneaux = creneaux;
 	}
 	
 	
@@ -63,17 +63,17 @@ public class Praticien extends Compte {
 		this.spe = spe;
 	}
 
-	public List<Crenaux> getCrenaux() {
-		return crenaux;
+	public List<Creneaux> getCrenaux() {
+		return creneaux;
 	}
 
-	public void setCrenaux(List<Crenaux> crenaux) {
-		this.crenaux = crenaux;
+	public void setCrenaux(List<Creneaux> creneaux) {
+		this.creneaux = creneaux;
 	}
 
 	@Override
 	public String toString() {
-		return "Praticien [lieu=" + lieu + ", spe=" + spe + ", crenaux=" + crenaux + ", getId()=" + getId()
+		return "Praticien [lieu=" + lieu + ", spe=" + spe + ", crenaux=" + creneaux + ", getId()=" + getId()
 				+ ", getVersion()=" + getVersion() + ", getNom()=" + getNom() + ", getPrenom()=" + getPrenom()
 				+ ", getEmail()=" + getEmail() + ", getMdp()=" + getMdp() + ", toString()=" + super.toString()
 				+ ", getClass()=" + getClass() + ", hashCode()=" + hashCode() + "]";
