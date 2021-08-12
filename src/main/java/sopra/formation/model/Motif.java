@@ -25,7 +25,7 @@ public class Motif {
 	@Column(name = "libelle")
 	private String libelle;
 	@Column(name = "duree")
-	private double duree;
+	private Integer duree;
 	@OneToMany(mappedBy = "motif")
 	private List<Rdv> rdv = new ArrayList<Rdv>();
 	@ManyToOne
@@ -38,7 +38,7 @@ public class Motif {
 	}
 
 
-	public Motif(Long id, int version, String libelle, double duree, List<Rdv> rdv, Specialite specialite) {
+	public Motif(Long id, int version, String libelle, Integer duree, List<Rdv> rdv, Specialite specialite) {
 		this.id = id;
 		this.version = version;
 		this.libelle = libelle;
@@ -48,7 +48,7 @@ public class Motif {
 	}
 
 
-	public Motif(int version, String libelle, double duree, List<Rdv> rdv, Specialite specialite) {
+	public Motif(int version, String libelle, Integer duree, List<Rdv> rdv, Specialite specialite) {
 		this.version = version;
 		this.libelle = libelle;
 		this.duree = duree;
@@ -57,7 +57,7 @@ public class Motif {
 	}
 
 
-	public Motif(Long id, int version, String libelle, double duree) {
+	public Motif(Long id, int version, String libelle, Integer duree) {
 		super();
 		this.id = id;
 		this.version = version;
@@ -65,10 +65,15 @@ public class Motif {
 		this.duree = duree;
 	}
 	
-	
+
+	public Motif(Long id, String libelle, Integer duree) {
+		this.id = id;
+		this.libelle = libelle;
+		this.duree = duree;
+	}
 
 
-	public Motif(String libelle, double duree) {
+	public Motif(String libelle, Integer duree) {
 		super();
 		this.libelle = libelle;
 		this.duree = duree;
@@ -103,7 +108,7 @@ public class Motif {
 		return duree;
 	}
 
-	public void setDuree(double duree) {
+	public void setDuree(Integer duree) {
 		this.duree = duree;
 	}
 

@@ -67,6 +67,13 @@ public class Rdv {
 		this.creneaux = creneaux;
 	}
 	
+	public Rdv(Long id, String lieu, Date dtRdv, Status status) {
+		this.id = id;
+		this.lieu = lieu;
+		this.dtRdv = dtRdv;
+		this.status = status;
+	}
+	
 	public Rdv(String lieu, Date dtRdv, Status status) {
 		this.lieu = lieu;
 		this.dtRdv = dtRdv;
