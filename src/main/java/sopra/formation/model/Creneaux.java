@@ -10,6 +10,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Transient;
@@ -26,39 +27,24 @@ public class Creneaux {
 	private int version;
 	@Column(name="date")
 	private Date creneauxDispo;
-	@Transient
-	@OneToMany(mappedBy = "motif_id")
-	private List<Motif> motif = new ArrayList<Motif>();
+	@OneToMany(mappedBy = "creneaux_id")
+	private List<Rdv> rdv = new ArrayList<Rdv>();
+	@ManyToOne
+	@JoinColumn(name="Praticien")
+	private Praticien praticien;
 	
 	public Creneaux() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Creneaux(Long id, int version, Date creneauxDispo, List<Motif> motif) {
+	public Creneaux(Long id, int version, Date creneauxDispo, List<Rdv> rdv, Praticien praticien) {
 		super();
 		this.id = id;
 		this.version = version;
 		this.creneauxDispo = creneauxDispo;
-		this.motif = motif;
-	}
-
-	public Creneaux(Long id,  Date creneauxDispo, List<Motif> motif) {
-		
-		this.id = id;
-		this.creneauxDispo = creneauxDispo;
-		this.motif = motif;
-	}
-	public Creneaux(Date creneauxDispo, List<Motif> motif) {
-				
-		this.creneauxDispo = creneauxDispo;
-		this.motif = motif;
-	}
-	
-	public Creneaux(Date creneauxDispo) {
-		
-		this.creneauxDispo = creneauxDispo;
-		
+		this.rdv = rdv;
+		this.praticien = praticien;
 	}
 
 	public Long getId() {
@@ -85,13 +71,22 @@ public class Creneaux {
 		this.creneauxDispo = creneauxDispo;
 	}
 
-	public List<Motif> getMotif() {
-		return motif;
+	public List<Rdv> getRdv() {
+		return rdv;
 	}
 
-	public void setMotif(List<Motif> motif) {
-		this.motif = motif;
+	public void setRdv(List<Rdv> rdv) {
+		this.rdv = rdv;
 	}
+
+	public Praticien getPraticien() {
+		return praticien;
+	}
+
+	public void setPraticien(Praticien praticien) {
+		this.praticien = praticien;
+	}
+
 	
 	
 }
