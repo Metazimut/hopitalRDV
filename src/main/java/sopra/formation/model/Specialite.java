@@ -22,7 +22,7 @@ public class Specialite {
 	@Version
 	private int version;
 	@Column(name="libelle")
-	private String  libelle;
+	private String libelle;
 	@OneToMany(mappedBy="specialite")
 	private List<PraticienSpecialite> praticienSpecialites = new ArrayList<PraticienSpecialite>();
 	@OneToMany(mappedBy="specialite")
@@ -33,12 +33,12 @@ public class Specialite {
 		super();
 	}
 	
-	public Specialite(Long id, String Libelle) {
+	public Specialite(Long id, String libelle) {
 		this.id=id;
 		this.libelle=libelle;
 	}
 	
-	public Specialite(String Libelle) {
+	public Specialite(String libelle) {
 		this.libelle=libelle;
 	}
 
@@ -89,6 +89,8 @@ public class Specialite {
 	public String toString() {
 		return "Specialite [id=" + id + ", version=" + version + ", libelle=" + libelle + "]";
 	}
+
+
 
 	
 	
