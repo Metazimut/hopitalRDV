@@ -25,7 +25,7 @@ public class Specialite {
 	private String  libelle;
 	@OneToMany(mappedBy="specialite")
 	private List<PraticienSpecialite> praticienSpecialites = new ArrayList<PraticienSpecialite>();
-	@OneToMany(mappedBy="motif")
+	@OneToMany(mappedBy="specialite")
 	private List<Motif> motifs = new ArrayList<Motif>();
 	
 	

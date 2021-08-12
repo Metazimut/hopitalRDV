@@ -12,14 +12,12 @@ import javax.persistence.OneToMany;
 import javax.persistence.Transient;
 
 @Entity
-@DiscriminatorValue("stagiaire")
+@DiscriminatorValue("praticien")
 public class Praticien extends Compte {
 	@Column(name="Lieu")
 	private String lieu;
-	@Transient
 	@OneToMany(mappedBy = "Praticien")
 	private List<PraticienSpecialite> spe = new ArrayList<PraticienSpecialite>();
-	@Transient
 	@OneToMany(mappedBy = "Praticien")
 	private List<Creneaux> creneaux = new ArrayList<Creneaux>();
 	
