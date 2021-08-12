@@ -1,15 +1,12 @@
 package sopra.formation.model;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
-import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
-import javax.persistence.Transient;
 
 @Entity
 @DiscriminatorValue("praticien")
@@ -37,8 +34,19 @@ public class Praticien extends Compte {
 		this.creneaux = creneaux;
 	}
 	
+	public Praticien(Long id, int version, String nom, String prenom, String email, String mdp, String lieu) {
+		super(id, version, nom, prenom, email, mdp);
+		this.lieu = lieu;
+		
+	}
 	
-
+	
+	public Praticien(Long id, String nom, String prenom, String email, String mdp, String lieu, List<PraticienSpecialite> spe, List<Creneaux> creneaux) {
+		super(id, nom, prenom, email, mdp);
+		this.lieu = lieu;
+		this.spe = spe;
+		this.creneaux = creneaux;
+	}
 
 	public Praticien(String nom, String prenom, String email, String mdp,String lieu) {
 		super(nom, prenom, email, mdp);
@@ -76,6 +84,7 @@ public class Praticien extends Compte {
 				+ ", getEmail()=" + getEmail() + ", getMdp()=" + getMdp() + ", toString()=" + super.toString()
 				+ ", getClass()=" + getClass() + ", hashCode()=" + hashCode() + "]";
 	}
+
 
 
 
