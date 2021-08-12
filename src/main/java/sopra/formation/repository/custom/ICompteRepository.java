@@ -25,20 +25,22 @@ public interface ICompteRepository extends JpaRepository<Compte, Long> {
 	@Query("select pr from Praticien pr")
 	List<Praticien> findAllPraticien(); // @Query
 
-	Admin findAdminByEmail(@Param("email") String email); // NamedQuery 
+	Admin findAllAdminByEmail(@Param("email") String email); // NamedQuery 
 
-	Patient findPatientByEmail(@Param("email") String email); // NamedQuery
+	Patient findAllPatientByEmail(@Param("email") String email); // NamedQuery
 	
-	Praticien findPraticienByEmail(@Param("email") String email); // NamedQuery
+	Praticien findAllPraticienByEmail(@Param("email") String email); // NamedQuery
 	
-	Admin findAdminByNom(@Param("Nom") String nom); // NamedQuery 
+	Admin findAllAdminByNom(@Param("Nom") String nom); // NamedQuery 
 
-	Patient findPatientByNom(@Param("Nom") String nom); // NamedQuery
+	Patient findAllPatientByNom(@Param("Nom") String nom); // NamedQuery
 	
-	Praticien findPraticienByNom(@Param("Nom") String nom); // NamedQuery
+	Praticien findAllPraticienByNom(@Param("Nom") String nom); // NamedQuery
 	
 	@Query("select ps.praticien from PraticienSpecialite ps where ps.id = (select ps.id from PraticienSpecialite ps join ps.specialite s where s =:spe)")
-	Praticien findPraticienBySpe(@Param("spe") Specialite spe);
+	Praticien findAllPraticienBySpe(@Param("spe") Specialite spe);
+	
+	Praticien findAllPraticienByLieu(@Param("lieu") String lieu);
 	
 	Praticien findPraticienById(@Param("Id") Long idPraticien); // NamedQuery
 
