@@ -45,6 +45,10 @@ public interface ICompteRepository extends JpaRepository<Compte, Long> {
 	
 	@Query("select ps.praticien from PraticienSpecialite ps where ps.id = (select ps.id from PraticienSpecialite ps join ps.specialite s where s =:spe)")
 	Praticien findPraticienBySpe(@Param("spe") Specialite spe);
+	
+	Praticien findPraticienById(@Param("Id") Long idPraticien); // NamedQuery
 
-
+	Patient findPatientById(@Param("Id") Long idPatient); // NamedQuery
+	
+	Admin findAdminById(@Param("Id") Long idAdmin); // NamedQuery
 }
