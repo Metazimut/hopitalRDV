@@ -15,12 +15,6 @@ import sopra.formation.model.Specialite;
 
 
 public interface ICompteRepository extends JpaRepository<Compte, Long> {
-
-	Admin findAdminById(@Param("id") Long id);
-	
-	Patient findPatientById(@Param("id") Long id);
-	
-	Praticien findPraticienById(@Param("id") Long id);
 	
 	@Query("select a from Admin a")
 	List<Admin> findAllAdmin(); // @Query
