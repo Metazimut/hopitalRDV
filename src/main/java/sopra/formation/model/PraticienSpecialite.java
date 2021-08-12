@@ -1,12 +1,17 @@
 package sopra.formation.model;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 import javax.persistence.Version;
 
+
+@Entity
+@Table(name = "Praticien_Specialite")
 public class PraticienSpecialite {
 
 	@Id
