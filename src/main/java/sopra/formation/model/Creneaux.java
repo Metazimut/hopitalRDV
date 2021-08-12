@@ -1,5 +1,5 @@
 package sopra.formation.model;
 
-public class Crenaux {
+public class Creneaux {
 
 }
