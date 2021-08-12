@@ -2,7 +2,9 @@ package sopra.formation.test;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -37,15 +39,12 @@ public class TestSpringConfJava {
 		IRdvRepository RDVRepo = context.getBean(IRdvRepository.class);
 		ICreneauxRepository creneauxRepo = context.getBean(ICreneauxRepository.class);
 
-
 		Compte pat1 = new Patient( "W", "mat","w.mat@gmail.com","123");
 		CompteRepo.save(pat1);
 		
 		Compte adm2 = new Admin( "D", "xav","d.xav@gmail.com","321");
 		CompteRepo.save(adm2);
-		
-		
-		
+	
 		Specialite spe1= new Specialite("generaliste");
 		SpecialiteRepo.save(spe1);
 		
@@ -87,10 +86,9 @@ public class TestSpringConfJava {
 		
 		
 
-		
-		System.out.println("must find xav"+CompteRepo.findAdminByEmail("d.xav@gmail.com"));
-		System.out.println("must find mat"+CompteRepo.findPatientByNom("W"));
-		System.out.println("must find stan"+CompteRepo.findPraticienByNom("Der"));
+		System.out.println("must find xav by email "+CompteRepo.findAdminByEmail("d.xav@gmail.com"));
+		System.out.println("must find mat by nom "+CompteRepo.findPatientByNom("W"));
+		System.out.println("must find stan by specialite "+CompteRepo.findPraticienBySpe(spe1));
 		context.close();
 		
 	}

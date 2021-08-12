@@ -10,11 +10,18 @@ import sopra.formation.model.Admin;
 import sopra.formation.model.Compte;
 import sopra.formation.model.Patient;
 import sopra.formation.model.Praticien;
+import sopra.formation.model.Specialite;
 
 
 
 public interface ICompteRepository extends JpaRepository<Compte, Long> {
 
+	Admin findAdminById(@Param("id") Long id);
+	
+	Patient findPatientById(@Param("id") Long id);
+	
+	Praticien findPraticienById(@Param("id") Long id);
+	
 	@Query("select a from Admin a")
 	List<Admin> findAllAdmin(); // @Query
 
@@ -35,6 +42,9 @@ public interface ICompteRepository extends JpaRepository<Compte, Long> {
 	Patient findPatientByNom(@Param("Nom") String nom); // NamedQuery
 	
 	Praticien findPraticienByNom(@Param("Nom") String nom); // NamedQuery
+	
+	@Query("select ps.praticien from PraticienSpecialite ps where ps.id = (select ps.id from PraticienSpecialite ps join ps.specialite s where s =:spe)")
+	Praticien findPraticienBySpe(@Param("spe") Specialite spe);
 
 
 }
