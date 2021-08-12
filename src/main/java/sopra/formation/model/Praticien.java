@@ -13,9 +13,9 @@ import javax.persistence.OneToMany;
 public class Praticien extends Compte {
 	@Column(name="Lieu")
 	private String lieu;
-	@OneToMany(mappedBy = "Praticien")
+	@OneToMany(mappedBy = "praticien")
 	private List<PraticienSpecialite> spe = new ArrayList<PraticienSpecialite>();
-	@OneToMany(mappedBy = "Praticien")
+	@OneToMany(mappedBy = "praticien")
 	private List<Creneaux> creneaux = new ArrayList<Creneaux>();
 	
 	public Praticien() {
@@ -79,7 +79,7 @@ public class Praticien extends Compte {
 
 	@Override
 	public String toString() {
-		return "Praticien [lieu=" + lieu + ", spe=" + spe + ", crenaux=" + creneaux + ", getId()=" + getId()
+		return "Praticien [lieu=" + lieu + ", getId()=" + getId()
 				+ ", getVersion()=" + getVersion() + ", getNom()=" + getNom() + ", getPrenom()=" + getPrenom()
 				+ ", getEmail()=" + getEmail() + ", getMdp()=" + getMdp() + ", toString()=" + super.toString()
 				+ ", getClass()=" + getClass() + ", hashCode()=" + hashCode() + "]";

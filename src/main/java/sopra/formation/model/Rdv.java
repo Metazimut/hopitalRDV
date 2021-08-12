@@ -66,6 +66,12 @@ public class Rdv {
 		this.patient = patient;
 		this.creneaux = creneaux;
 	}
+	
+	public Rdv(String lieu, Date dtRdv, Status status) {
+		this.lieu = lieu;
+		this.dtRdv = dtRdv;
+		this.status = status;
+	}
 
 
 	public Long getId() {
@@ -143,7 +149,7 @@ public class Rdv {
 	@Override
 	public String toString() {
 		return "Rdv [id=" + id + ", version=" + version + ", lieu=" + lieu + ", dtRdv=" + dtRdv + ", status=" + status
-				+ ", motif=" + motif + "]";
+				+"]";
 	}
 
 
