@@ -6,6 +6,7 @@ import sopra.formation.config.ApplicationConfig;
 import sopra.formation.model.Admin;
 import sopra.formation.model.Compte;
 import sopra.formation.model.Patient;
+import sopra.formation.model.Praticien;
 import sopra.formation.repository.custom.ICompteRepository;
 
 public class TestSpringConfJava {
@@ -16,14 +17,18 @@ public class TestSpringConfJava {
 		ICompteRepository CompteRepo = context.getBean(ICompteRepository.class);
 
 
-		Compte com1 = new Patient( "W", "mat","w.mat@gmail.com","123");
-		CompteRepo.save(com1);
+//		Compte com1 = new Patient( "W", "mat","w.mat@gmail.com","123");
+//		CompteRepo.save(com1);
+//		
+//		Compte com2 = new Admin( "D", "xav","d.xav@gmail.com","321");
+//		CompteRepo.save(com2);
 		
-		Compte com2 = new Admin( "D", "xav","d.xav@gmail.com","321");
-		CompteRepo.save(com2);
+//		Compte com3 = new Praticien("Der", "sta","d.sta@gmail.com","321","paris");
+//		CompteRepo.save(com3);
 		
 		System.out.println(CompteRepo.findAdminByEmail("d.xav@gmail.com"));
 		System.out.println(CompteRepo.findPatientByNom("W"));
+		System.out.println(CompteRepo.findPraticienByNom("Der"));
 		context.close();
 		
 		
